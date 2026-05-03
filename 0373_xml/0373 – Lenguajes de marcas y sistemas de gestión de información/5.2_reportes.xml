@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<contact_center>
+
+    //USUARIOS
+    <usuarios>
+        <usuario>
+            <id>1</id>
+            <nombre>admin</nombre>
+            <password>123</password>
+            <rol>administrador</rol>
+        </usuario>
+
+        <usuario>
+            <id>2</id>
+            <nombre>prometeo</nombre>
+            <password>1234</password>
+            <rol>agente</rol>
+        </usuario>
+    </usuarios>
+
+
+    //CLIENTES
+    <clientes>
+
+        <cliente>
+            <id_cliente>CC24571</id_cliente>
+            <nombre>Laura Hijuelos</nombre>
+            <telefono>634100000</telefono>
+            <campaña>Remarketing</campaña>
+            <franja>MAÑANA</franja>
+        </cliente>
+
+        <cliente>
+            <id_cliente>CC02177</id_cliente>
+            <nombre>Jorge Pérez</nombre>
+            <telefono>634100001</telefono>
+            <campaña>Remarketing</campaña>
+            <franja>MAÑANA</franja>
+        </cliente>
+
+        <cliente>
+            <id_cliente>CC03245</id_cliente>
+            <nombre>María López</nombre>
+            <telefono>634100002</telefono>
+            <campaña>Remarketing</campaña>
+            <franja>MAÑANA</franja>
+        </cliente>
+
+        <cliente>
+            <id_cliente>CC05432</id_cliente>
+            <nombre>Carlos García</nombre>
+            <telefono>634100003</telefono>
+            <campaña>Remarketing</campaña>
+            <franja>MAÑANA</franja>
+        </cliente>
+
+    </clientes>
+
+
+    //SESIONES
+    <sesiones>
+        <sesion>
+            <usuario>prometeo</usuario>
+            <fecha>2021-01-20</fecha>
+
+            //LLAMADAS
+            <llamadas>
+                <llamada>
+                    <fecha>2021-01-20</fecha>
+                    <tipo_llamada>Outbound</tipo_llamada>
+                    <id_cliente>CC02177</id_cliente>
+                    <hora_inicio>07:32</hora_inicio>
+                    <hora_fin>07:40</hora_fin>
+                    <status>CONTACTO</status>
+                    <tipificacion1>CLIENTE MAL PERFILADO</tipificacion1>
+                    <tipificacion2>Ya desembolso</tipificacion2>
+                </llamada>
+            </llamadas>
+
+            //ESTADOS
+            <estados>
+
+                <estado>
+                    <tipo_estado>BAÑO</tipo_estado>
+                    <hora_inicio>10:00</hora_inicio>
+                    <hora_fin>10:03</hora_fin>
+                    <duracion>00:03</duracion>
+                    <exceso>SI</exceso>
+                    <acumulado_sesion>00:03</acumulado_sesion>
+                </estado>
+
+                <estado>
+                    <tipo_estado>COMIDA</tipo_estado>
+                    <hora_inicio>14:00</hora_inicio>
+                    <hora_fin>14:30</hora_fin>
+                    <duracion>00:30</duracion>
+                    <exceso>NO</exceso>
+                    <acumulado_sesion>00:33</acumulado_sesion>
+                </estado>
+
+                <estado>
+                    <tipo_estado>BAÑO</tipo_estado>
+                    <hora_inicio>16:00</hora_inicio>
+                    <hora_fin>16:05</hora_fin>
+                    <duracion>00:05</duracion>
+                    <exceso>NO</exceso>
+                    <acumulado_sesion>00:38</acumulado_sesion>
+                </estado>
+
+                <estado>
+                    <tipo_estado>INCIDENCIA</tipo_estado>
+                    <hora_inicio>19:00</hora_inicio>
+                    <hora_fin>19:30</hora_fin>
+                    <duracion>00:30</duracion>
+                    <acumulado_sesion>01:08</acumulado_sesion>
+                </estado>
+
+                <estado>
+                    <tipo_estado>FEEDBACK</tipo_estado>
+                    <hora_inicio>21:00</hora_inicio>
+                    <hora_fin>21:10</hora_fin>
+                    <duracion>00:10</duracion>
+                    <acumulado_sesion>01:18</acumulado_sesion>
+                </estado>
+
+            </estados>
+
+        </sesion>
+    </sesiones>
+
+</contact_center>

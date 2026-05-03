@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- ELEMENTO RAÍZ -->
+    <xs:element name="contact_center">
+        <xs:complexType>
+            <xs:sequence>
+
+                <!-- USUARIOS -->
+                <xs:element name="usuarios">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="usuario" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="id" type="xs:integer"/>
+                                        <xs:element name="nombre" type="xs:string"/>
+                                        <xs:element name="password" type="xs:string"/>
+                                        <xs:element name="rol">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="administrador"/>
+                                                    <xs:enumeration value="agente"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <!-- CLIENTES -->
+                <xs:element name="clientes">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="cliente" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="id_cliente" type="xs:string"/>
+                                        <xs:element name="nombre" type="xs:string"/>
+                                        <xs:element name="telefono" type="xs:string"/>
+                                        <xs:element name="campaña" type="xs:string"/>
+                                        <xs:element name="franja">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="MAÑANA"/>
+                                                    <xs:enumeration value="TARDE"/>
+                                                    <xs:enumeration value="NOCHE"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <!-- SESIONES -->
+                <xs:element name="sesiones">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="sesion" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+
+                                        <xs:element name="usuario" type="xs:string"/>
+                                        <xs:element name="fecha" type="xs:date"/>
+
+                                        <!-- LLAMADAS -->
+                                        <xs:element name="llamadas">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="llamada" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="fecha" type="xs:date"/>
+                                                                <xs:element name="tipo_llamada">
+                                                                    <xs:simpleType>
+                                                                        <xs:restriction base="xs:string">
+                                                                            <xs:enumeration value="Outbound"/>
+                                                                            <xs:enumeration value="Inbound"/>
+                                                                        </xs:restriction>
+                                                                    </xs:simpleType>
+                                                                </xs:element>
+                                                                <xs:element name="id_cliente" type="xs:string"/>
+                                                                <xs:element name="hora_inicio" type="xs:string"/>
+                                                                <xs:element name="hora_fin" type="xs:string"/>
+                                                                <xs:element name="status" type="xs:string"/>
+                                                                <xs:element name="tipificacion1" type="xs:string"/>
+                                                                <xs:element name="tipificacion2" type="xs:string"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+
+                                        <!-- ESTADOS -->
+                                        <xs:element name="estados">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="estado" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="tipo_estado">
+                                                                    <xs:simpleType>
+                                                                        <xs:restriction base="xs:string">
+                                                                            <xs:enumeration value="BAÑO"/>
+                                                                            <xs:enumeration value="COMIDA"/>
+                                                                            <xs:enumeration value="BREAK"/>
+                                                                            <xs:enumeration value="INCIDENCIA"/>
+                                                                            <xs:enumeration value="FEEDBACK"/>
+                                                                        </xs:restriction>
+                                                                    </xs:simpleType>
+                                                                </xs:element>
+                                                                <xs:element name="hora_inicio" type="xs:string"/>
+                                                                <xs:element name="hora_fin" type="xs:string"/>
+                                                                <xs:element name="duracion" type="xs:string"/>
+                                                                <xs:element name="exceso">
+                                                                    <xs:simpleType>
+                                                                        <xs:restriction base="xs:string">
+                                                                            <xs:enumeration value="SI"/>
+                                                                            <xs:enumeration value="NO"/>
+                                                                        </xs:restriction>
+                                                                    </xs:simpleType>
+                                                                </xs:element>
+                                                                <xs:element name="acumulado_sesion" type="xs:string"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

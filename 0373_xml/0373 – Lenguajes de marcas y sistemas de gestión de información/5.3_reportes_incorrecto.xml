@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contact_center xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> xsi:noNamespaceSchemaLocation="esquema.xsd"
+
+
+    <usuarios>
+        <usuario>
+            <id>1</id>
+            <nombre>admin</nombre>
+            <password>123</password>
+            <rol>superadmin</rol> <!-- ERROR: rol no permitido -->
+        </usuario>
+    </usuarios>
+
+    <clientes>
+        <cliente>
+            <id_cliente>CC99999</id_cliente>
+            <nombre>Cliente Erróneo</nombre>
+            <telefono>123</telefono> <!-- ERROR: teléfono demasiado corto -->
+            <campaña>Remarketing</campaña>
+            <franja>MADRUGADA</franja> <!-- ERROR: franja no permitida -->
+        </cliente>
+    </clientes>
+
+    <sesiones>
+        <sesion>
+            <usuario>prometeo</usuario>
+            <fecha>2021/01/20</fecha> <!-- ERROR: formato incorrecto (debe ser YYYY-MM-DD) -->
+
+            <llamadas>
+                <llamada>
+                    <fecha>2021-01-20</fecha>
+                    <tipo_llamada>Manual</tipo_llamada> <!-- ERROR: no existe en enumeración -->
+                    <id_cliente>CC99999</id_cliente>
+                    <hora_inicio>07:32</hora_inicio>
+                    <hora_fin>07:40</hora_fin>
+                    <status>CONTACTO</status>
+                    <tipificacion1>TEST</tipificacion1>
+                    <tipificacion2>TEST</tipificacion2>
+                </llamada>
+            </llamadas>
+
+            <estados>
+                <estado>
+                    <tipo_estado>DORMIR</tipo_estado> <!-- ERROR: estado no permitido -->
+                    <hora_inicio>10:00</hora_inicio>
+                    <hora_fin>10:03</hora_fin>
+                    <duracion>00:03</duracion>
+                    <exceso>QUIZAS</exceso> <!-- ERROR: solo SI o NO -->
+                    <acumulado_sesion>00:03</acumulado_sesion>
+                </estado>
+            </estados>
+
+        </sesion>
+    </sesiones>
+
+</contact_center>
